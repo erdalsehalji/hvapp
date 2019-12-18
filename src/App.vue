@@ -1,6 +1,6 @@
 <template>
+<body>
   <div id="app">
-    <header>
       <div id="navi">
        
         <ul>
@@ -11,7 +11,7 @@
             <router-link class="a" to="/pocetna">POČETNA</router-link>
           </li>
           <li>
-            <router-link class="a" to="/home">NUTRI CALC</router-link>
+            <router-link class="a" to="/nutricalc">NUTRI CALC</router-link>
           </li>
           <li>
             <router-link button type="button" class="button" to="/home">NAZAD</router-link>
@@ -25,37 +25,41 @@
         <br>
         <br>
       </div>
-      </header>
+     
+      <div>
       <router-view />
-      <br>
-      <br>
 
-      <footer class="footer is-primaty">
-        <div class="container">
-          <div class="foot-top">
-            <div class="column">
-            <br>
-              <p>HEALTHVISOR APLIKACIJA ZA RAČUNANJE I PRAĆENJE 
-                TJELESNIH KARAKTERISTIKA
-              </p>
-            </div>
-          <div class="columns">
-            <router-link id="foti-li" to="/home">O NAMA</router-link>
-         <br>
-            <router-link class="a" to="/pocetna">NUTRI CALC</router-link>
-         <br>
-            <router-link id="foti-li" to="/home">POČETNA</router-link>
-          </div>
-          </div>
-        </div>
-      </footer>
+      </div>
+      <br>
+      
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <p>HEALTHVISOR, aplikacija za analizu u praćenje tjelesnih specifikacija.</p>
   </div>
+</footer>
+  </div>
+  </body>
 </template>
 
 <style>
+.container {
+  width: auto;
+  max-width: 1000px;
+  max-height: 1500px;
+  padding: 0 0px;
+}
+
+
+
   .footer {
     background-color: #333;
-    color: white;
+    position: fixed;
+    color: orange;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
   }
 #if{
   background-color: #4CAF50;
@@ -102,6 +106,18 @@
   }
   #app{
     background-color: rgb(84, 82, 82);
+    height: 100vh;
   }
 
+#footer-li {
+  text-align: center;
+
+}
+body {
+  height: 100%;
+}
+p {
+  color:orange;
+  text-align: center;
+}
 </style>

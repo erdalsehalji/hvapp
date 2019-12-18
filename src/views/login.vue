@@ -13,11 +13,11 @@
                                 else.</small></div>
                         <div class="form-group"><label for="exampleInputPassword1">Password</label><input
                                 type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
-                        </div><button type="submit" class="btn btn-primary">Submit</button>
+                        </div><button type="submit" class="btn btn-primary">Prijava</button>
                     </form>
                 </div>
                 <div id="raz" class="col-1"></div>
-                <div id="reg" class="col-6">
+                <div id="reg" class="col-7">
                           <strong>REGISTRACIJA</strong>
                     <div id="korisnik" class="form-row">
                         <div class="form-group col-md-6"><label for="inputEmail4">Ime</label><input type="email"
@@ -42,9 +42,9 @@
                             </select></div>
                     </div><button type="submit" class="btn btn-primary">Registracija</button><br>
                 </div>
+               
             </div>
         </div>
-        <div id="raz" class="col-1"></div>
     </div>
 </template>
 
@@ -55,7 +55,8 @@
         padding-bottom: 10 px;
         text-align: center;
         padding-top: 20px;
-        padding-bottom: 20 px;
+        padding-bottom: 100 px;
+        margin-top: 100px;
     }
 
     #reg {
@@ -65,8 +66,13 @@
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
+        margin-top: 100px;
     }
     #korisnik {
         padding-top: 20px;
+    }
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 </style>

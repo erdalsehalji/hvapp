@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <div class="row">
+ 
+      <div class="row">
       <div id="home21" class="col-4"><br><br>
         <div class="card" style=""><img src="vaga.jpg" class="card-img-top" alt=""></div><br>
       <div id="btnpoc">
-          <router-link button type="button" class="btn btn-warning" to="/izbornikfunkcija">BODY CALC</router-link>
+          <router-link button type="button" class="btn btn-warning" to="/bodycalc">BODY CALC</router-link>
       </div>
       <br>
         <p>Traži unos podataka o određenim tjelesnim karakteristikama.
@@ -17,7 +18,7 @@
       <div id="home11" class="col-4"><br><br>
         <div class="card" style=""><img src="kal.png" class="card-img-top" alt=""></div><br>
        <div id="btnpoc">
-          <router-link button type="button" class="btn btn-warning" to="/izbornikfunkcija">NUTRI CALC</router-link>
+          <router-link button type="button" class="btn btn-warning" to="/nutricalc">NUTRI CALC</router-link>
       </div>
       <br>
         <p>Traži unos imena namirnice i količinu u gramima.
@@ -33,7 +34,7 @@
        <p>Traži unos imena namirnice ili klik na dugme random.
           <p> Zatim izbacuje podatke o namirnici, kao i zanimljivosti vezane uz istu.
         </p>
-     
+ 
       </div>
     </div>
   </div>

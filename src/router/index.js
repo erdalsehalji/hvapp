@@ -13,19 +13,37 @@ const routes = [
   {
     path: '/pocetna',
     name: 'pocetna',
-    component: () => import(/* webpackChunkName: "about" */ '../views/pocetna.vue')
+    component: () => import(/* webpackChunkName: "pocetna" */ '../views/pocetna.vue')
   },
 
   {
     path: '/izbornik',
     name: 'izbornik',
-    component: () => import(/* webpackChunkName: "izbornikfunkcija" */ '../views/izbornik.vue')
+    component: () => import(/* webpackChunkName: "izbornik" */ '../views/izbornik.vue')
   },
 
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "izbornikfunkcija" */ '../views/login.vue')
+    component: () => import(/* webpackChunkName: "login" */ '../views/login.vue')
+  },
+
+  {
+    path: '/nutricalc',
+    name: 'nutricalc',
+    component: () => import(/* webpackChunkName: "nutricalc" */ '../views/nutricalc.vue')
+  },
+
+  {
+    path: '/pracenje',
+    name: 'pracenje',
+    component: () => import(/* webpackChunkName: "pracenje" */ '../views/pracenje.vue')
+  },
+
+  {
+    path: '/bodycalc',
+    name: 'bodycalc',
+    component: () => import(/* webpackChunkName: "bodycalc" */ '../views/bodycalc.vue')
   }
 ]
 
