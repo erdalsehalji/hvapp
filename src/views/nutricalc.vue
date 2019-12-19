@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div id="naslov" class="col-12">
                       <h5><strong>NUTRITIVNI KALKULATOR</strong></h5>
                 </div>
  
@@ -50,20 +50,19 @@
         color: white;
         padding-bottom: 10 px;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20 px;
-        margin-top: 100px;
+        margin-top: 40px;
+        padding-top:20px;
     }
-
+#naslov {
+    margin-bottom: 30px;
+}
     #nutrires {
         background-color: #333;
         color: white;
         padding-bottom: 10 px;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin-top: 100px;
-        margin-bottom: 50px;
+        margin-top: 40px;
+        padding-top:20px;
     }
     #korisnik {
         padding-top: 0px;
@@ -79,7 +78,7 @@
     font-size: 40px;
     line-height: 40px;
     color: orange;
-    align-items: center;
-    margin-left: 260px;
+    text-align: center;
+    margin-left: 240px;
     }
 </style>

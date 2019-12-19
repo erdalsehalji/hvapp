@@ -1,8 +1,8 @@
 <template>
-<body>
-  <div id="app">
+
+  <body>
+    <div id="app">
       <div id="navi">
-       
         <ul>
           <li>
             <router-link class="a" to="/izbornik">O NAMA</router-link>
@@ -16,40 +16,32 @@
           <li>
             <router-link button type="button" class="button" to="/home">NAZAD</router-link>
           <li>
-          <router-link button type="button" class="button" to="/login">LOGIN/SIGNUP</router-link>
+            <router-link button type="button" class="button" to="/login">LOGIN/SIGNUP</router-link>
           </li>
-
           <li style="float:right">
-            <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link></li>
-        </ul>
-        <br>
-        <br>
+            <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>
+          </li>
+        </ul><br><br>
       </div>
-     
       <div>
-      <router-view />
-
-      </div>
-      <br>
-      
-<footer class="footer mt-auto py-3">
-  <div class="container">
-    <p>HEALTHVISOR, aplikacija za analizu u praćenje tjelesnih specifikacija.</p>
-  </div>
-</footer>
-  </div>
+        <router-view />
+      </div><br>
+      <footer class="footer mt-auto py-3">
+        <div class="container">
+          <p9>HEALTHVISOR,
+            aplikacija za analizu u praćenje tjelesnih specifikacija.</p9>
+        </div>
+      </footer>
+    </div>
   </body>
 </template>
-
 <style>
-.container {
-  width: auto;
-  max-width: 1000px;
-  max-height: 1500px;
-  padding: 0 0px;
-}
-
-
+  .container {
+    width: auto;
+    max-width: 1000px;
+    max-height: 1500px;
+    padding: 0 0px;
+  }
 
   .footer {
     background-color: #333;
@@ -60,10 +52,13 @@
     right: 0px;
     margin-top: 10px;
     padding-top: 10px;
+    text-align: center;
   }
-#if{
-  background-color: #4CAF50;
-}
+
+  #if {
+    background-color: #4CAF50;
+  }
+
   #navi {
     padding-bottom: 20 px;
   }
@@ -101,23 +96,28 @@
     background-color: #333;
     width: 100%;
   }
+
   .button {
     background-color: orange;
   }
-  #app{
+
+  #app {
     background-color: rgb(84, 82, 82);
     height: 100vh;
   }
 
-#footer-li {
-  text-align: center;
+  #footer-li {
+    text-align: center;
 
-}
-body {
-  height: 100%;
-}
-p {
-  color:orange;
-  text-align: center;
-}
+  }
+
+  body {
+    height: 100%;
+  }
+
+  p9 {
+    color: orange;
+    text-align: center;
+    position: center;
+  }
 </style>
