@@ -14,9 +14,9 @@
             <router-link class="a" to="/nutricalc">NUTRI CALC</router-link>
           </li>
           <li>
-            <router-link button type="button" class="button" to="/home">NAZAD</router-link>
+            <router-link button type="button" class="button" to="/login">LOGIN</router-link>
           <li>
-            <router-link button type="button" class="button" to="/login">LOGIN/SIGNUP</router-link>
+            <router-link button type="button" class="button" to="/signup">SIGNUP</router-link>
           </li>
           <li style="float:right">
             <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>

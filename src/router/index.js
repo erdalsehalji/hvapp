@@ -44,7 +44,14 @@ const routes = [
     path: '/bodycalc',
     name: 'bodycalc',
     component: () => import(/* webpackChunkName: "bodycalc" */ '../views/bodycalc.vue')
+  },
+
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import(/* webpackChunkName: "bodycalc" */ '../views/signup.vue')
   }
+
 ]
 
 const router = new VueRouter({
