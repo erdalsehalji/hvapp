@@ -13,12 +13,18 @@
           <li>
             <router-link class="a" to="/nutricalc">NUTRI CALC</router-link>
           </li>
-          <li>
-            <router-link button type="button" class="button" to="/login">LOGIN</router-link>
-          <li>
-            <router-link button type="button" class="button" to="/signup">SIGNUP</router-link>
-          </li>
+          <li  >
+            <router-link v-if="!authenticated" class="button" to="/login">Login</router-link>
+                <span   v-if="authenticated">
+                  {{ userEmail }}
+                  <a  @click.prevent="logout" class="button" href="#">Logout</a>
+                </span>
+            <li >
+            <router-link v-if="!authenticated" class="button" to="/signup">Signup</router-link>
+            </li>
+          
           <li style="float:right">
+                
             <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>
           </li>
         </ul><br><br>
@@ -35,6 +41,40 @@
     </div>
   </body>
 </template>
+<script type="text/javascript">
+import store from '@/store.js'
+
+export default {
+  data () {
+    return store;
+  },
+
+  methods: {
+    logout() {
+      firebase.auth().signOut();
+    }
+  },
+
+  mounted() {
+    const self = this
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        self.userEmail = user.email;
+        self.authenticated = true;
+        console.log(`Authenticated: ${self.userEmail}`)
+        if (self.$route.name !== 'home')
+          self.$router.push({name: 'home'})
+      }
+      else {
+        self.authenticated = false
+        console.log('Logged out')
+        if (self.$route.name !== 'login')
+          self.$router.push({name: 'login'})
+      }
+    });
+  }
+}
+</script>
 <style>
   .container {
     width: auto;
