@@ -41,47 +41,49 @@
                                                                 metoda</label><input type="number" class="form-control"
                                                                 :value="dubois" name="duboisova"
                                                                 id="dubo" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Takahirina
+                                                <div class="form-group col-md-4"><label>Takahirina
                                                                 metoda</label><input type="number" class="form-control"
                                                                 :value="takahira" name="takihirina"
                                                                 id="taka" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Fujimotova
+                                                <div class="form-group col-md-4"><label>Fujimotova
                                                                 metoda</label><input type="number" class="form-control"
                                                                 :value="fujimoto" name="fujimotova"
                                                                 id="fuji" placeholder=""></div>
                                         </div>
                                         <p10><strong>BODY FAT INDEX (BFI)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Body fat
+                                                <div class="form-group col-md-4"><label>Body fat
                                                                 index (%)</label><input type="number" class="form-control"
                                                                  :value="bfi" name="bfiukupan"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Body fat
+                                                <div class="form-group col-md-4"><label>Body fat
                                                                 mass (kg)</label><input type="number" class="form-control"
                                                                 :value="bfm" name="bfm"
                                                                 id="bfm" placeholder=""></div>                                                      
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Čista tjelesna
+                                                <div class="form-group col-md-4"><label>Čista tjelesna
                                                                 masa (kg)</label><input type="decimal" class="form-control"
                                                                  :value="cista" name="cista"
                                                                 id="cista" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="inputEmail4">Idealni BFI za
+                                                <div class="form-group col-md-4"><label>Idealni BFI za
                                                                 danu dob</label><input type="email" class="form-control"
-                                                                id="inputEmail4" placeholder=""></div>
-                                                 <div class="form-group col-md-4"><label
-                                                                for="inputEmail4">Ocjena</label><input type="email"
-                                                                class="form-control" id="inputEmail4" placeholder="">
+                                                                :value="idealbfi" name="idealbfi"
+                                                                id="idealbfi" placeholder=""></div>
+                                                 <div class="form-group col-md-4"><label>Ocjena</label><input type="email"
+                                                                class="form-control" id="i" placeholder="">
                                                 </div>
                                         </div>
                                         <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="inputEmail4">BMI</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label>BMI</label><input type="number" class="form-control"
                                                                 :value="bmi" name="bmiukupan"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="inputEmail4">ocjena</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label>ocjena</label><input type="text" class="form-control"
                                                                 :value="bmio" name="bmio" id="inputEmail4" placeholder=""></div>
                                                 <div class="form-group col-md-4"><label
-                                                                for="inputEmail4">Ugljikohidrati</label><input
-                                                                type="number" class="form-control" id="inputEmail4"
+                                                                for="inputEmail4">Do idealnog stanja</label><input
+                                                                type="email" 
+                                                                 :value="idealbmi" name="idealbmi"
+                                                                class="form-control" id="inputEmail4"
                                                                 placeholder=""></div>
                                         </div>
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
@@ -111,26 +113,61 @@ export default {
     },
     computed: {
              bmi: function () {
-                  let bmi = this.tezina / ((this.visina*this.visina) / 10000)   
+              
+                  let bmi = this.tezina / ((this.visina*this.visina) / 10000) ;  
                       return bmi.toFixed(2)  
-               }, 
+               },  
 
-              bmio: function () {
-                      if ( this.bmi < 8 ) {
-                              return 'pothranjenost'
+         bmio: function () {
+                      if ( this.bmi < 16 ) {
+                              return 'ozbiljna mršavost'
+                      }
+                      else if ( this.bmi > 16 && this.bmi < 17 ) {
+                              return 'povećana mršavost'
+                      }
+                      else  if ( this.bmi > 17 && this.bmi < 18.5 ) {
+                              return 'blaga mršavost'
+                      }
+                      else if ( this.bmi > 18.5 && this.bmi < 25 ) {
+                              return 'normalno'
                       }
 
-                      else if ( this.bmi > 8 && this.bmi < 19 ) {
-                              return 
-                      }
-                      else  if ( this.bmi > 19 && this.bmi < 25 ) {
+                        else  if ( this.bmi > 25 && this.bmi < 30 ) {
                               return 'prekomjerno'
                       }
-                      else if ( this.bmi > 25 ) {
-                              return 'pretilo'
+
+                        else  if ( this.bmi > 30 && this.bmi < 35 ) {
+                              return 'pretilost 1. stupnja'
                       }
 
+                        else  if ( this.bmi > 35 && this.bmi < 40) {
+                              return 'pretilost 2. stupnja'
+                      }
+
+                        else  if ( this.bmi > 40 ) {
+                              return 'pretilost 3. stupnja'
+                      }
               }, 
+
+              idealbmi: function () {
+              if (this.bmi < 18.5) {
+              let ideall = this.visina / 18.5 
+              return  ' + ' + ideall.toFixed(1) + 'kg'
+              }
+
+              if (this.bmi > 25) {
+                if (this.bmi > 25) {
+                let idealh
+                idealh = this.visina / 25 
+                return ' - ' + idealh.toFixed(1) + 'kg'
+              }
+              }
+
+              if (this.bmi > 18 && this.bmi < 25) {
+                      return 'vase je stanje idealno'
+              }
+              
+              },
 
              dubois: function () {
                   let dubo = 0.007184 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725)
@@ -148,9 +185,13 @@ export default {
              },
 
              bfi: function () {
+                if (this.spol === 'm' || this.spol === 'M') {
+                let bfi = (1.39 * ((this.tezina / ((this.visina*this.visina) / 10000)) + (0.16 * this.dob)) - (10.34 * 1) - 9 ) ;     
+                return bfi.toFixed(2) }
 
-                let bfi = (1.39 * ((this.tezina / ((this.visina*this.visina) / 10000)) + (0.16 * this.dob)) - (10.34 * this.spol) - 9 )
-                return bfi.toFixed(2)
+                else if (this.spol === 'Z' || this.spol === 'z') {
+                let bfi = (1.39 * ((this.tezina / ((this.visina*this.visina) / 10000)) + (0.16 * this.dob)) - (10.34 * 0) - 9 ) ;     
+                return bfi.toFixed(2) }
                 
              },
 
@@ -162,7 +203,64 @@ export default {
 
              cista: function () {
                      let cista = this.tezina - this.bfm
-                     return cista
+                     return cista.toFixed(2)
+             },
+
+             idealbfi: function () {
+                     if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                             if (this.dob < 20 ) {
+                               return 17.7 + '%'
+                             }
+                              if (this.dob < 25 ) {
+                               return 18.4 + '%'
+                             }
+                              if (this.dob < 30 ) {
+                               return 19.3 + '%'
+                             }
+                              if (this.dob < 35 ) {
+                               return 21.5 + '%'
+                             }
+                              if (this.dob < 40 ) {
+                               return 22.2 + '%'
+                             }
+                              if (this.dob < 45 ) {
+                               return 22.9 + '%'
+                             }
+                              if (this.dob < 50 ) {
+                               return 25.2 + '%'
+                             }
+                              if (this.dob < 55 ) {
+                               return 26.3 + '%'
+                             }
+                     }
+
+                      else if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                             if (this.dob < 20 ) {
+                               return 8.5 + '%'
+                             }
+                              if (this.dob < 25 ) {
+                               return 10.7 + '%'
+                             }
+                              if (this.dob < 30 ) {
+                               return 12.7 + '%'
+                             }
+                              if (this.dob < 35 ) {
+                               return 13.7 + '%'
+                             }
+                              if (this.dob < 40 ) {
+                               return 15.3 + '%'
+                             }
+                              if (this.dob < 45 ) {
+                               return 16.4 + '%'
+                             }
+                              if (this.dob < 50 ) {
+                               return 18.9 + '%'
+                             }
+                              if (this.dob < 55 ) {
+                               return 20.9 + '%'
+                             }
+                     }
+
              }
     }
 
