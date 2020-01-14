@@ -5,89 +5,95 @@
                 <div id="naslov" class="col-12">
                     <h10><strong>REGISTRACIJA</strong></h10>
                 </div>
-
-  <div id="reg" class="col-12"><strong>REGISTRACIJA</strong>
-                    <div id="korisnik" class="form-row">
-                        <div class="form-group col-md-6"><label for="inputname">Ime</label><input type="text"
-                                class="form-control" id="inputname" placeholder="unesite ime"></div>
-                        <div class="form-group col-md-6"><label for="inputsurname">Prezime</label><input type="text"
-                                class="form-control" id="inputsurname" placeholder="unesite prezime"></div>
-                        <div class="form-group col-md-6"><label for="inputEmail">Email</label><input type="email"
-                                class="form-control" id="inputEmail" placeholder="unesite email"></div>
-                        <div class="form-group col-md-6"><label for="inputPassword">Password</label><input
-                                type="password" id="inputpassword" placeholder="unesite password" class="form-control"></div>
-                        <div id="dob" class="form-group col-md-6"><label for="inputsex">Spol</label><select
-                                id="inputSex" type= "char" class="form-control">               
-                                <option>M</option>
-                                <option>Ž</option>
-                            </select></div>
-                        <div id="dob" class="form-group col-md-6"><label for="inputage">Dob</label><select
-                                id="inputage" type= "number" class="form-control">
-                                <option selected>1</option> <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
-                                <option>9</option><option>10</option><option>11</option>
-                                <option>12</option>
-                                <option>12</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
-                                <option>25</option>
-                                <option>26</option>
-                                <option>27</option>
-                                <option>28</option>
-                                <option>29</option>
-                                <option>30</option>
-                                <option>31</option>
-                                <option>32</option>
-                                <option>33</option>
-                                <option>34</option>
-                                <option>35</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>38</option>
-                                <option>39</option>
-                                <option>40</option>
-                                <option>41</option>
-                                <option>42</option>
-                                <option>43</option>
-                                <option>44</option>
-                                <option>45</option>
-                                <option>46</option>
-                                <option>47</option>
-                                <option>48</option>
-                                <option>49</option>
-                                <option>50</option>
-                                <option>51</option>
-                                <option>52</option>
-                                <option>53</option>
-                                <option>54</option>
-                                <option>55</option>
-                                <option>56</option>
-                                <option>57</option>
-                                <option>58</option>
-                                <option>59</option>
-                                <option>60</option>
-                                <option>61</option>
-                                <option>62</option>
-                                <option>63</option>
-                                <option>64</option>
-                                <option>65</option>
-                                <option>66</option>
-                                <option>67</option>
-                                <option>68</option>
-                                <option>69</option>
-                                <option>70</option>                  
-                            </select></div>
-                    </div><button id="logbutton" type="submit" class="btn btn-primary">Registracija</button><br>
+   <div class="col-3"></div>
+  <div id="reg" class="col-6">
+                   <form @submit.prevent="signup">
+        <div class="form-group">
+          <label for="emailField">Email address</label>
+          <input v-model="email" type="email" class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="passwordField">Password</label>
+          <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="confirmPasswordField">Confirm Password</label>
+          <input v-model="password2" type="password" class="form-control" id="confirmPasswordField" placeholder="Confirm password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+      </form>
                 </div>
+                <div class="col-3"></div>
                 </div>
                 </div>
 
 </template>
+
+<script>
+export default {
+    name:"login",
+  data()  {
+        return {
+         email:'',
+         password:'',
+         password2:''
+        }
+    } ,
+    methods: {
+        signup(){
+            firebase.auth().createUserWithEmailAndPassword(this.email , this.password).catch(function(error){
+                console.log(error);
+            });
+        }
+    }
+}
+</script>
+<style>
+ h10 {
+        font-family: Chilanka;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 40px;
+        color: orange;
+
+
+    }
+#log {
+        background-color: #333;
+        color: white;
+        padding-bottom: 10 px;
+        text-align: center;
+        padding-bottom: 100 px;
+        padding-top: 20px;
+    }
+
+    #reg {
+        background-color: #333;
+        color: white;
+        padding-bottom: 10 px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    #korisnik {
+        padding-top: 20px;
+    }
+
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #naslov {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #logbutton {
+        margin-bottom: 20px;
+    }
+</style>
