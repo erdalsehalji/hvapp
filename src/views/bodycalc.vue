@@ -7,27 +7,27 @@
                                 </div>
                                 <div id="bodyupit" class="col-md-2">
                                         <form>
-                                                <div class="form-group"><label>Težina</label><input
+                                                <div class="form-group"><label for="InputEmail">Težina</label><input
                                                                 type="number" class="form-control" name="tezina" v-model= "tezina" id="tezina"
-                                                                placeholder=""></div>                                               
-                                                <div class="form-group"><label>Visina</label><input
+                                                                placeholder="kg"></div>                                               
+                                                <div class="form-group"><label for="exampleInputPassword1">Visina</label><input
                                                                 type="number" class="form-control" name="visina" v-model= "visina" id="visina"
-                                                                placeholder=""></div>
-                                                 <div class="form-group"><label>Opseg vrata</label><input
-                                                                type="number" class="form-control" name="opvrata" v-model= "opvrata" id="opvrata"
-                                                                placeholder=""></div>
-                                                <div class="form-group"><label>Opseg
-                                                                struka</label><input type="text" class="form-control" v-model= "opstruka"
-                                                                id="opstruka" placeholder=""></div>
+                                                                placeholder="cm"></div>
+                                                 <div class="form-group"><label for="exampleInputPassword1">Opseg vrata</label><input
+                                                                type="decimal" class="form-control"  v-model= "opvrata" id="opvrata"
+                                                                placeholder="cm"></div>
                                                 <div class="form-group"><label for="exampleInputPassword1">Opseg
-                                                                kukova</label><input type="text" class="form-control" v-model= "opkukova"
-                                                                id="opkukova" placeholder=""></div>
+                                                                struka</label><input type="decimal" class="form-control" v-model= "opstruka"
+                                                                id="opstruka" placeholder="cm"></div>
+                                                <div class="form-group"><label for="exampleInputPassword1">Opseg
+                                                                kukova</label><input type="decimal" class="form-control" v-model= "opkukova"
+                                                                id="opkukova" placeholder="cm"></div>
                                                 <div class="form-group"><label for="exampleInputPassword1">Dob
-                                                        </label><input type="text" class="form-control" v-model= "dob"
-                                                                id="dob" placeholder=""></div>
+                                                        </label><input type="decimal" class="form-control" v-model= "dob"
+                                                                id="dob" placeholder="godine"></div>
                                                 <div class="form-group"><label for="exampleInputPassword1">Spol
-                                                        </label><input type="text" class="form-control" v-model= "spol"
-                                                                id="spol" placeholder=""></div>
+                                                        </label><input type="decimal" class="form-control" v-model= "spol"
+                                                                id="spol" placeholder="m/z"></div>
                                                                 <button
                                                         id="bodybutton" type="submit"
                                                         class="btn btn-primary">Izračunaj</button>
@@ -37,52 +37,55 @@
                                 <div id="bodyuotput" class="col-9">
                                         <p10><strong>BODY SURFACE AREA (m2)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label>Du Boisova
-                                                                metoda</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Du Boisova
+                                                                metoda (m2)</label><input type="char" class="form-control"
                                                                 :value="dubois" name="duboisova"
                                                                 id="dubo" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Takahirina
-                                                                metoda</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Takahirina
+                                                                metoda (m2)</label><input type="char" class="form-control"
                                                                 :value="takahira" name="takihirina"
                                                                 id="taka" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Fujimotova
-                                                                metoda</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Fujimotova
+                                                                metoda (m2)</label><input type="char" class="form-control"
                                                                 :value="fujimoto" name="fujimotova"
                                                                 id="fuji" placeholder=""></div>
                                         </div>
                                         <p10><strong>BODY FAT INDEX (BFI)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label>Body fat
-                                                                index (%)</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat
+                                                                index (%)</label><input type="char" class="form-control"
                                                                  :value="bfi" name="bfiukupan"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Body fat
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat
                                                                 mass (kg)</label><input type="number" class="form-control"
                                                                 :value="bfm" name="bfm"
                                                                 id="bfm" placeholder=""></div>                                                      
-                                                <div class="form-group col-md-4"><label>Čista tjelesna
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Čista tjelesna
                                                                 masa (kg)</label><input type="decimal" class="form-control"
-                                                                 :value="cista" name="cista"
+                                                                 :value="cista" name="cista" 
                                                                 id="cista" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Idealni BFI za
-                                                                danu dob</label><input type="email" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Idealni BFI za
+                                                                danu dob (%)</label><input type="email" class="form-control"
                                                                 :value="idealbfi" name="idealbfi"
                                                                 id="idealbfi" placeholder=""></div>
-                                                 <div class="form-group col-md-4"><label>Ocjena postotka masti</label><input type="text"
+                                                 <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena postotka masti</label><input type="text"
                                                                 :value="bfiocjena" name="bfiocjena"
                                                                 class="form-control" id="i" placeholder="">
                                                 </div>
+                                                   <div class="form-group col-md-4"><label for="exampleInputPassword1">BMI poboljšanje (kg)</label><input type="char" class="form-control"
+                                                                :value="bmip" name="bmiukupan"
+                                                                id="inputEmail4" placeholder=""></div>
                                         </div>
                                         <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label>Body mass index</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body mass index (kg/m2)</label><input type="char" class="form-control"
                                                                 :value="bmi" name="bmiukupan"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Ocjena količnika težine i visine</label><input type="text" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena količnika težine i visine</label><input type="text" class="form-control"
                                                                 :value="bmio" name="bmio" id="inputEmail4" placeholder=""></div>
                                                 <div class="form-group col-md-4"><label
-                                                                for="inputEmail4">Do idealnog stanja</label><input
-                                                                type="email" 
+                                                                for="inputEmail4">Idealno za vašu visinu (kg)</label><input
+                                                                type="char" 
                                                                  :value="idealbmi" name="idealbmi"
                                                                 class="form-control" id="inputEmail4"
                                                                 placeholder=""></div>
@@ -90,25 +93,25 @@
 
                                        <p10><strong>DNEVNI METABOLIČKI UNOS</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label>Bazični metabolički unos</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Bazični metabolički unos</label><input type="char" class="form-control"
                                                                 :value="bmr" name="bmr"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Niski nivo aktivnosti</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Niski nivo aktivnosti</label><input type="char" class="form-control"
                                                                 :value="bmr1" name="bmr1"  placeholder=""></div>
-                                                <div class="form-group col-md-4"><label
+                                                <div class="form-group col-md-4"><label 
                                                                 for="inputEmail4">Aktivnost 1-3 puta tjedno</label><input
-                                                                type="number" 
+                                                                type="char" 
                                                                  :value="bmr2" name="bmr2"
                                                                 class="form-control" 
                                                                 placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Aktivnost 4-5 puta tjedno</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Aktivnost 4-5 puta tjedno</label><input type="char" class="form-control"
                                                                 :value="bmr3" name="bmr3"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>Intenzivno 3-4 puta tjedno</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Intenzivno 3-4 puta tjedno</label><input type="char" class="form-control"
                                                                 :value="bmr4" name="bmr4" id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label
+                                                <div class="form-group col-md-4"><label 
                                                                 for="inputEmail4">Intenzivno 6-7 puta tjedno</label><input
-                                                                type="number" 
+                                                                type="char" 
                                                                  :value="bmr5" name="bmr5"
                                                                 class="form-control" id="inputEmail4"
                                                                 placeholder=""></div>
@@ -143,7 +146,7 @@ export default {
              bmi: function () {
               
                   let bmi = this.tezina / ((this.visina*this.visina) / 10000) ;  
-                      return bmi.toFixed(2)  
+                      return bmi.toFixed(2)
                },  
          bmio: function () {
                       if ( this.bmi < 16 ) {
@@ -176,27 +179,20 @@ export default {
                       }
               }, 
               idealbmi: function () {
-              if (this.bmi < 18.5) {
-              let ideall = this.visina / 18.5 
-              return  ' + ' + ideall.toFixed(1) + 'kg'
-              }
+              if (this.spol === 'm' || this.spol === 'M') {
+                      let ide = (((this.visina - 152) / 2.5) * 1.9) + 52 
+                      return (ide - 13.34).toFixed(2) + ' - ' +  (ide + 9.76).toFixed(2)
+              } 
 
-              if (this.bmi > 25) {
-                if (this.bmi > 25) {
-                let idealh
-                idealh = this.visina / 25 
-                return ' - ' + idealh.toFixed(1) + 'kg'
-              }
-              }
-
-              if (this.bmi > 18 && this.bmi < 25) {
-                      return 'vase je stanje idealno'
-              }
+                 if (this.spol === 'z' || this.spol === 'Z') {
+                      let ide = (((this.visina - 152) / 2.5) * 1.7) + 49 
+                      return (ide - 13.34).toFixed(2) + ' - ' +  (ide + 9.76).toFixed(2)
+              } 
               
               },
              dubois: function () {
-                  let dubo = 0.007184 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725)
-                  return dubo.toFixed(2) 
+                  let dubo = 0.007184 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725) 
+                  return dubo.toFixed(2)
              },
              takahira: function () {
                  let takahira = 0.007241 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725)
@@ -219,7 +215,7 @@ export default {
              },
              bfm: function () {
                      let bfm = this.tezina * (this.bfi / 100)
-                     return bfm.toFixed(2)
+                     return bfm.toFixed(2) 
                      
              },
              cista: function () {
@@ -229,54 +225,54 @@ export default {
              idealbfi: function () {
                      if ( this.spol === 'z' ||  this.spol === 'Z' ) {
                              if (this.dob < 20 ) {
-                               return 17.7 + '%'
+                               return 17.70 
                              }
                               if (this.dob < 25 ) {
-                               return 18.4 + '%'
+                               return 18.40 
                              }
                               if (this.dob < 30 ) {
-                               return 19.3 + '%'
+                               return 19.30 
                              }
                               if (this.dob < 35 ) {
-                               return 21.5 + '%'
+                               return 21.50 
                              }
                               if (this.dob < 40 ) {
-                               return 22.2 + '%'
+                               return 22.20 
                              }
                               if (this.dob < 45 ) {
-                               return 22.9 + '%'
+                               return 22.90 
                              }
                               if (this.dob < 50 ) {
-                               return 25.2 + '%'
+                               return 25.20 
                              }
                               if (this.dob < 55 ) {
-                               return 26.3 + '%'
+                               return 26.30 
                              }
                      }
                       else if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              if (this.dob < 20 ) {
-                               return 8.5 + '%'
+                               return 8.50 
                              }
                               if (this.dob < 25 ) {
-                               return 10.7 + '%'
+                               return 10.70 
                              }
                               if (this.dob < 30 ) {
-                               return 12.7 + '%'
+                               return 12.70 
                              }
                               if (this.dob < 35 ) {
-                               return 13.7 + '%'
+                               return 13.70 
                              }
                               if (this.dob < 40 ) {
-                               return 15.3 + '%'
+                               return 15.30 
                              }
                               if (this.dob < 45 ) {
-                               return 16.4 + '%'
+                               return 16.40
                              }
                               if (this.dob < 50 ) {
-                               return 18.9 + '%'
+                               return 18.90 
                              }
                               if (this.dob < 55 ) {
-                               return 20.9 + '%'
+                               return 20.90 
                              }
                      }
 
@@ -284,100 +280,109 @@ export default {
              bfiocjena: function () {
                      if ( this.spol === 'z' ||  this.spol === 'Z' ) {
                              if (this.bfi > 10 && this.bfi < 13 ) {
-                               return 'esencijalne masti'
+                               return 'ESENCIJALNE MASTI - loše stanje'
                              }
-                              if (this.bfi > 14 && this.bfi < 20) {
-                               return 'sportaš'
+                              if (this.bfi > 13 && this.bfi < 20) {
+                               return 'SPORTAŠ - vrhunsko stanje'
                              }
-                              if (this.bfi > 21 && this.bfi < 24 ) {
-                               return 'fit'
+                              if (this.bfi > 20 && this.bfi < 24 ) {
+                               return 'FIT - vrlo dobro stanje'
                              }
-                              if (this.bfi > 25 && this.bfi < 31 ) {
-                               return  'prosjecno'
+                              if (this.bfi > 24 && this.bfi < 31 ) {
+                               return  'PROSJEČNO - dobro stanje'
                              }
-                              if (this.dob > 32 ) {
-                               return 'pretilo'
+                              if (this.dob > 31 ) {
+                               return 'PRETILO - loše stanje'
                              }
                         
                      }
                       else if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              if (this.bfi > 2 && this.bfi < 5 ) {
-                               return 'esencijalne masti'
+                               return 'esencijalne masti - loše stanje'
                              }
-                              if (this.bfi > 6 && this.bfi < 13 ) {
-                               return 'sportaš'
+                              if (this.bfi > 5 && this.bfi < 13 ) {
+                               return 'SPORTAŠ  - vrhunsko stanje'
                              }
-                              if (this.bfi > 14 && this.bfi < 17 ) {
-                               return 'fit'
+                              if (this.bfi > 13 && this.bfi < 17 ) {
+                               return 'FIT - vrlo dobro stanje'
                              }
-                              if (this.bfi > 18 && this.bfi < 25 ) {
-                               return 'prosjecno'
+                              if (this.bfi > 17 && this.bfi < 25 ) {
+                               return 'PROSJEČNO - dobro stanje'
                              }
                               if (this.bfi > 25) {
-                               return 'pretilo'
+                               return 'PRETILO  - loše stanje'
                              }
                         }
                  },
 
                  bmr: function () {
-                          if ( this.spol === 'm' ||  this.spol === 'm' ) {
+                          if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              let bmrm = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5
-                             return bmrm       
+                             return bmrm.toFixed(2) + ' kalorija dnevno'
                              }
                           else if   ( this.spol === 'z' ||  this.spol === 'Z' ) {
                              let bmrz = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161
-                             return bmrz        
+                             return bmrz.toFixed(2) + ' kalorija dnevno'          
                              }                        
                      },
                 
                 bmr1: function () {
                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                                let bmrr = (this.bmrm * 1.2)
-                         return bmrr
+                                let bmrr1 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5) * 1.2
+                         return bmrr1.toFixed(2) + ' kalorija dnevno' 
                         }
 
                        else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                         return this.bmrz * 1.2
+                           let bmrr1 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.2
+                           return bmrr1.toFixed(2) + ' kalorija dnevno'    
                         }
                 },
 
                 bmr2: function () {
                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                         return this.bmrm * 1.4
+                         let bmrr2 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5) * 1.4
+                         return bmrr2.toFixed(2) + ' kalorija dnevno'   
                         }
 
                         else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                         return this.bmrz * 1.4
+                          let bmrr2 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.4
+                           return bmrr2.toFixed(2) + ' kalorija dnevno'   
                         }
                 },
 
                 bmr3: function () {
                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                         return this.bmrm * 1.5
+                         let bmrr3 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5) * 1.6
+                         return bmrr3.toFixed(2) + ' kalorija dnevno'   
                         }
 
-                       else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                         return this.bmrz * 1.5
+                        else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                          let bmrr3 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.6
+                           return bmrr3.toFixed(2) + ' kalorija dnevno'   
                         }
                 },
 
                 bmr4: function () {
-                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                         return this.bmrm * 1.6
+                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         let bmrr4 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5) * 1.7
+                         return bmrr4.toFixed(2) + ' kalorija dnevno'   
                         }
 
-                       else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                         return this.bmrz * 1.6
+                        else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                          let bmrr4 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.7
+                           return bmrr4.toFixed(2) + ' kalorija dnevno'   
                         }
                 },
 
                 bmr5: function () {
-                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                         return this.bmrm * 1.7
+                          if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         let bmrr5 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5) * 1.8
+                         return bmrr5.toFixed(2) + ' kalorija dnevno'   
                         }
 
-                        if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                         return this.bmrz * 1.7
+                        else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                          let bmrr5 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.8
+                           return bmrr5.toFixed(2) + ' kalorija dnevno'   
                         }
                 }
                 
