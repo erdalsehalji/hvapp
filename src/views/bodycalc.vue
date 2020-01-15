@@ -68,16 +68,17 @@
                                                                 danu dob</label><input type="email" class="form-control"
                                                                 :value="idealbfi" name="idealbfi"
                                                                 id="idealbfi" placeholder=""></div>
-                                                 <div class="form-group col-md-4"><label>Ocjena</label><input type="email"
+                                                 <div class="form-group col-md-4"><label>Ocjena postotka masti</label><input type="text"
+                                                                :value="bfiocjena" name="bfiocjena"
                                                                 class="form-control" id="i" placeholder="">
                                                 </div>
                                         </div>
                                         <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
                                         <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label>BMI</label><input type="number" class="form-control"
+                                                <div class="form-group col-md-4"><label>Body mass index</label><input type="number" class="form-control"
                                                                 :value="bmi" name="bmiukupan"
                                                                 id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label>ocjena</label><input type="text" class="form-control"
+                                                <div class="form-group col-md-4"><label>Ocjena količnika težine i visine</label><input type="text" class="form-control"
                                                                 :value="bmio" name="bmio" id="inputEmail4" placeholder=""></div>
                                                 <div class="form-group col-md-4"><label
                                                                 for="inputEmail4">Do idealnog stanja</label><input
@@ -86,6 +87,33 @@
                                                                 class="form-control" id="inputEmail4"
                                                                 placeholder=""></div>
                                         </div>
+
+                                       <p10><strong>DNEVNI METABOLIČKI UNOS</strong></p10>
+                                        <div id="korisnik" class="form-row">
+                                                <div class="form-group col-md-4"><label>Bazični metabolički unos</label><input type="number" class="form-control"
+                                                                :value="bmr" name="bmr"
+                                                                id="inputEmail4" placeholder=""></div>
+                                                <div class="form-group col-md-4"><label>Niski nivo aktivnosti</label><input type="number" class="form-control"
+                                                                :value="bmr1" name="bmr1"  placeholder=""></div>
+                                                <div class="form-group col-md-4"><label
+                                                                for="inputEmail4">Aktivnost 1-3 puta tjedno</label><input
+                                                                type="number" 
+                                                                 :value="bmr2" name="bmr2"
+                                                                class="form-control" 
+                                                                placeholder=""></div>
+                                                <div class="form-group col-md-4"><label>Aktivnost 4-5 puta tjedno</label><input type="number" class="form-control"
+                                                                :value="bmr3" name="bmr3"
+                                                                id="inputEmail4" placeholder=""></div>
+                                                <div class="form-group col-md-4"><label>Intenzivno 3-4 puta tjedno</label><input type="number" class="form-control"
+                                                                :value="bmr4" name="bmr4" id="inputEmail4" placeholder=""></div>
+                                                <div class="form-group col-md-4"><label
+                                                                for="inputEmail4">Intenzivno 6-7 puta tjedno</label><input
+                                                                type="number" 
+                                                                 :value="bmr5" name="bmr5"
+                                                                class="form-control" id="inputEmail4"
+                                                                placeholder=""></div>
+                                        </div>
+
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
                                                 to="/pracenje">Pračenje</router-link>
                                 </div>
@@ -117,7 +145,6 @@ export default {
                   let bmi = this.tezina / ((this.visina*this.visina) / 10000) ;  
                       return bmi.toFixed(2)  
                },  
-
          bmio: function () {
                       if ( this.bmi < 16 ) {
                               return 'ozbiljna mršavost'
@@ -148,7 +175,6 @@ export default {
                               return 'pretilost 3. stupnja'
                       }
               }, 
-
               idealbmi: function () {
               if (this.bmi < 18.5) {
               let ideall = this.visina / 18.5 
@@ -168,12 +194,10 @@ export default {
               }
               
               },
-
              dubois: function () {
                   let dubo = 0.007184 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725)
                   return dubo.toFixed(2) 
              },
-
              takahira: function () {
                  let takahira = 0.007241 * Math.pow(this.tezina, 0.425) * Math.pow(this.visina, 0.725)
                  return takahira.toFixed(2)
@@ -191,21 +215,17 @@ export default {
 
                 else if (this.spol === 'Z' || this.spol === 'z') {
                 let bfi = (1.39 * ((this.tezina / ((this.visina*this.visina) / 10000)) + (0.16 * this.dob)) - (10.34 * 0) - 9 ) ;     
-                return bfi.toFixed(2) }
-                
+                return bfi.toFixed(2) }              
              },
-
              bfm: function () {
                      let bfm = this.tezina * (this.bfi / 100)
                      return bfm.toFixed(2)
                      
              },
-
              cista: function () {
                      let cista = this.tezina - this.bfm
                      return cista.toFixed(2)
              },
-
              idealbfi: function () {
                      if ( this.spol === 'z' ||  this.spol === 'Z' ) {
                              if (this.dob < 20 ) {
@@ -233,7 +253,6 @@ export default {
                                return 26.3 + '%'
                              }
                      }
-
                       else if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              if (this.dob < 20 ) {
                                return 8.5 + '%'
@@ -261,11 +280,110 @@ export default {
                              }
                      }
 
-             }
+             },
+             bfiocjena: function () {
+                     if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                             if (this.bfi > 10 && this.bfi < 13 ) {
+                               return 'esencijalne masti'
+                             }
+                              if (this.bfi > 14 && this.bfi < 20) {
+                               return 'sportaš'
+                             }
+                              if (this.bfi > 21 && this.bfi < 24 ) {
+                               return 'fit'
+                             }
+                              if (this.bfi > 25 && this.bfi < 31 ) {
+                               return  'prosjecno'
+                             }
+                              if (this.dob > 32 ) {
+                               return 'pretilo'
+                             }
+                        
+                     }
+                      else if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                             if (this.bfi > 2 && this.bfi < 5 ) {
+                               return 'esencijalne masti'
+                             }
+                              if (this.bfi > 6 && this.bfi < 13 ) {
+                               return 'sportaš'
+                             }
+                              if (this.bfi > 14 && this.bfi < 17 ) {
+                               return 'fit'
+                             }
+                              if (this.bfi > 18 && this.bfi < 25 ) {
+                               return 'prosjecno'
+                             }
+                              if (this.bfi > 25) {
+                               return 'pretilo'
+                             }
+                        }
+                 },
+
+                 bmr: function () {
+                          if ( this.spol === 'm' ||  this.spol === 'm' ) {
+                             let bmrm = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5
+                             return bmrm       
+                             }
+                          else if   ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                             let bmrz = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161
+                             return bmrz        
+                             }                        
+                     },
+                
+                bmr1: function () {
+                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                                let bmrr = (this.bmrm * 1.2)
+                         return bmrr
+                        }
+
+                       else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                         return this.bmrz * 1.2
+                        }
+                },
+
+                bmr2: function () {
+                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         return this.bmrm * 1.4
+                        }
+
+                        else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                         return this.bmrz * 1.4
+                        }
+                },
+
+                bmr3: function () {
+                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         return this.bmrm * 1.5
+                        }
+
+                       else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                         return this.bmrz * 1.5
+                        }
+                },
+
+                bmr4: function () {
+                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         return this.bmrm * 1.6
+                        }
+
+                       else if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                         return this.bmrz * 1.6
+                        }
+                },
+
+                bmr5: function () {
+                        if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                         return this.bmrm * 1.7
+                        }
+
+                        if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                         return this.bmrz * 1.7
+                        }
+                }
+                
+                 
     }
-
 }
-
 </script>
 <style>
         #naslov {
@@ -274,36 +392,27 @@ export default {
                 text-align: center;
                 padding-bottom: 20px;
         }
-
         #bodyupit {
                 background-color: #333;
                 color: white;
                 text-align: center;
-                padding-top: 20px;
                 padding-bottom: 20 px;
-                margin-top: 30px;
                 margin-bottom: 30px;
         }
-
         #bodyuotput {
                 background-color: #333;
                 color: white;
                 padding-bottom: 10 px;
                 text-align: center;
-                padding-top: 20px;
                 padding-bottom: 20px;
-                margin-top: 30px;
                 margin-bottom: 30px;
         }
-
         #korisnik {
                 padding-top: 0px;
         }
-
         #bodybutton {
                 margin-bottom: 20px;
         }
-
         h5 {
                 position: center;
                 font-family: Chilanka;
@@ -316,7 +425,6 @@ export default {
                 ;
 
         }
-
         p10 {
                 color: orange;
                 text-align: center;

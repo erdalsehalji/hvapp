@@ -5,7 +5,7 @@
       <div id="navi">
         <ul>
           <li>
-            <router-link class="a" to="/izbornik">O NAMA</router-link>
+            <router-link class="a" to="/izbornik">O APLIKACIJI </router-link>
           </li>
           <li>
             <router-link class="a" to="/pocetna">POČETNA</router-link>
@@ -15,16 +15,15 @@
           </li>
           <li  >
             <router-link v-if="!authenticated" class="button" to="/login">Login</router-link>
-                <span   v-if="authenticated">
-                  {{ userEmail }}
+                <span   v-if="authenticated">               
                   <a  @click.prevent="logout" class="button" href="#">Logout</a>
                 </span>
-            <li >
+                     
+            <li>
             <router-link v-if="!authenticated" class="button" to="/signup">Signup</router-link>
             </li>
-          
-          <li style="float:right">
-                
+             <p8>KORISNIK : {{ userEmail }} </p8>
+          <li style="float:right">              
             <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>
           </li>
         </ul><br><br>
@@ -154,6 +153,10 @@ export default {
   body {
     height: 100%;
   }
+p8 {
+  color:orange;
+  margin-left: 20px;
+}
 
   p9 {
     color: orange;
