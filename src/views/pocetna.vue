@@ -3,7 +3,7 @@
     <div class="row">
       <div id="home2" class="col-4"><br><br>
         <h2>ZNATE LI OVU STATISTIKU?</h2><br>
-        <p1>Pretilost je vodeći svijetski kroinični zdravstveni problem. <br></p1>
+        <p1>Pretilost eći svijetski kroinični zdravstveni problem. <br></p1>
         <p1>Pretilost u Europi se procjenuje na približno 30%. Po mišljeju SZO-a do 2030. čak 2.16 milijardi osoba imati
           prekomjernu težinu,
           dok će 1,
