@@ -72,9 +72,8 @@
                                                                 :value="bfiocjena" name="bfiocjena"
                                                                 class="form-control" id="i" placeholder="">
                                                 </div>
-                                                   <div class="form-group col-md-4"><label for="exampleInputPassword1">BMI poboljšanje (kg)</label><input type="char" class="form-control"
-                                                                :value="bmip" name="bmiukupan"
-                                                                id="inputEmail4" placeholder=""></div>
+                                                        <a href= "https://www.everydayhealth.com/diet-nutrition/bmi/how-you-reduce-your-bmi-science-backed-steps/" button id="bodybutto" type="submit" class="btn btn-primary col-md-4"
+                                        >VANJSKI LINK ZA POBOLJŠANJE BFI</a>
                                         </div>
                                         <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
                                         <div id="korisnik" class="form-row">
@@ -118,7 +117,7 @@
                                         </div>
 
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
-                                                to="/pracenje">Pračenje</router-link>
+                                                to="">Pračenje</router-link>
                                 </div>
                            
                         </div>
@@ -391,6 +390,13 @@ export default {
 }
 </script>
 <style>
+
+        #bodybutto {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color: orange;
+                color: black;
+        }
         #naslov {
                 display: table-cell;
                 vertical-align: middle;
