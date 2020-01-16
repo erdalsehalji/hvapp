@@ -68,13 +68,12 @@
                                                                 danu dob (%)</label><input type="email" class="form-control"
                                                                 :value="idealbfi" name="idealbfi"
                                                                 id="idealbfi" placeholder=""></div>
-                                                 <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena postotka masti</label><input type="char"
+                                                 <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena postotka masti</label><input type="text"
                                                                 :value="bfiocjena" name="bfiocjena"
                                                                 class="form-control" id="i" placeholder="">
                                                 </div>
-                                                   <div class="form-group col-md-4"><label for="exampleInputPassword1">BMI poboljšanje (kg)</label><input type="char" class="form-control"
-                                                                :value="bmip" name="bmiukupan"
-                                                                id="inputEmail4" placeholder=""></div>
+                                                        <a href= "https://www.everydayhealth.com/diet-nutrition/bmi/how-you-reduce-your-bmi-science-backed-steps/" button id="bodybutto" type="submit" class="btn btn-primary col-md-4"
+                                        >VANJSKI LINK ZA POBOLJŠANJE BFI</a>
                                         </div>
                                         <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
                                         <div id="korisnik" class="form-row">
@@ -118,7 +117,7 @@
                                         </div>
 
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
-                                                to="/pracenje">Pračenje</router-link>
+                                                to="">Pračenje</router-link>
                                 </div>
                            
                         </div>
@@ -248,6 +247,9 @@ export default {
                               if (this.dob < 55 ) {
                                return 26.30 
                              }
+                               if (this.dob > 55 ) {
+                               return 26.30 
+                             }
                      }
                       else if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              if (this.dob < 20 ) {
@@ -274,49 +276,75 @@ export default {
                               if (this.dob < 55 ) {
                                return 20.90 
                              }
+                             if (this.dob > 55 ) {
+                               return 20.90 
+                             }
                      }
 
              },
              bfiocjena: function () {
                      if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                             if (this.bfi < 13 ) {
+                             if (this.bfi  < 13 ) {
                                return 'ESENCIJALNE MASTI - loše stanje'
                              }
-                              else if (this.bfi > 13 && this.bfi < 20) {
+                              if (this.bfi > 13 && this.bfi < 20) {
                                return 'SPORTAŠ - vrhunsko stanje'
                              }
-                              else if (this.bfi > 20 && this.bfi < 24 ) {
+                              if (this.bfi > 20 && this.bfi < 24 ) {
                                return 'FIT - vrlo dobro stanje'
                              }
-                              else if (this.bfi > 24 && this.bfi < 31 ) {
+                              if (this.bfi > 24 && this.bfi < 31 ) {
                                return  'PROSJEČNO - dobro stanje'
                              }
-                              else if (this.bfi > 30 ) {
+                              if (this.dob > 31 ) {
                                return 'PRETILO - loše stanje'
                              }
                         
                      }
-                     if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                      else if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              if (this.bfi < 5 ) {
-                               return 'ESENCIJALNE MASTI - loše stanje'
+                               return 'esencijalne masti - loše stanje'
                              }
-                             else if (this.bfi > 5 && this.bfi < 13 ) {
+                              if (this.bfi > 5 && this.bfi < 13 ) {
                                return 'SPORTAŠ  - vrhunsko stanje'
                              }
-                             else if (this.bfi > 13 && this.bfi < 17 ) {
+                              if (this.bfi > 13 && this.bfi < 17 ) {
                                return 'FIT - vrlo dobro stanje'
                              }
-                             else if (this.bfi > 17 && this.bfi < 25 ) {
+                              if (this.bfi > 17 && this.bfi < 25 ) {
                                return 'PROSJEČNO - dobro stanje'
                              }
-                             else if (this.bfi > 25) {
+                              if (this.bfi > 25) {
                                return 'PRETILO  - loše stanje'
                              }
                         }
                  },
 
-               
+                /*
+                 poboljsanje: function () {
+                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
+                             if (this.bfi < 5 ) {
+                               return link za lose stanje - premalo
+                             }
+                              if (this.bfi > 5 && this.bfi < 25 ) {
+                               return link za dobro stanje
+                             }
+                              if (this.bfi > 25 ) {
+                               return link za lose stanje - previse
+                             }
 
+                              if ( this.spol === 'z' ||  this.spol === 'Z' ) {
+                             if (this.bfi < 13 ) {
+                               return link za lose stanje - premalo
+                             }
+                              if (this.bfi > 5 && this.bfi < 31 ) {
+                               return link za dobro stanje
+                             }
+                              if (this.bfi > 31 ) {
+                               return link za lose stanje - previse
+                             }
+                  },
+                 */
                  bmr: function () {
                           if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              let bmrm = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5
@@ -386,13 +414,18 @@ export default {
                           let bmrr5 = ((10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) - 161) * 1.8
                            return bmrr5.toFixed(2) + ' kalorija dnevno'   
                         }
-                }
-                
-                 
+                }              
     }
 }
 </script>
 <style>
+
+        #bodybutto {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color: orange;
+                color: black;
+        }
         #naslov {
                 display: table-cell;
                 vertical-align: middle;

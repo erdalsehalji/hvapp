@@ -2,23 +2,22 @@
   <div class="container">
     <div class="row">
       <div id="naslov" class="col-12">
-        <h0><strong>IZBORNIK FUNKCIJA</strong></h0>
+        <h5><strong>IZBORNIK FUNKCIJA</strong></h5>
       </div>
       <div id="home21" class="col-4"><br><br>
         <div class="card" style=""><img src="vaga.jpg" class="card-img-top" alt=""></div><br>
         <div id="btnpoc">
           <router-link button type="button" class="btn btn-warning" to="/bodycalc">BODY CALC</router-link>
         </div><br>
-        <p>Traži unos podataka o određenim tjelesnim karakteristikama. <p>Zatim kalkulira postotak,
-            masti,
-            mišične mase te prikazuje na osnvu obrađenih podataka daje uvid u stanje tijela. </p>
+        <p>Traži unos podataka o određenim tjelesnim karakteristikama. Zatim kalkulira detaljne
+          fizičke specifikacije te daje uvid u stanje tijela.</p>
       </div>
       <div id="home11" class="col-4"><br><br>
         <div class="card" style=""><img src="kal.png" class="card-img-top" alt=""></div><br>
         <div id="btnpoc">
           <router-link button type="button" class="btn btn-warning" to="/nutricalc">NUTRI CALC</router-link>
         </div><br>
-        <p>Traži unos imena namirnice i količinu u gramima. <p>Zatim kalkulira hranjivu vrijedost za unesenu namirnicu.
+        <p>Traži unos imena namirnice i količinu u gramima. Zatim kalkulira hranjivu vrijednost za unesenu namirnicu.
           </p>
       </div>
       <div id="home31" class="col-4"><br><br>
@@ -26,7 +25,7 @@
         <div id="btnpoc">
           <router-link button type="button" class="btn btn-warning" to="/izbornikfunkcija">FOOD INFO</router-link>
         </div><br>
-        <p>Traži unos imena namirnice ili klik na dugme random. <p>Zatim izbacuje podatke o namirnici,
+        <p>Traži unos imena namirnice ili klik na dugme random. Zatim izbacuje podatke o namirnici,
             kao i zanimljivosti vezane uz istu. </p>
       </div>
     </div>
@@ -35,6 +34,7 @@
 <style>
   #naslov {
     margin-bottom: 30px;
+    padding-bottom: 30px;
   }
 
   #kako {
@@ -53,7 +53,7 @@
     color: whitesmoke;
   }
 
-  h0 {
+  h5 {
     font-family: Chilanka;
     font-style: normal;
     font-weight: normal;

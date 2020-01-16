@@ -5,21 +5,23 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
 const routes = [
+
   {
     path: '/',
     name: 'home',
-    component: Home
-  },
-  {
-    path: '/pocetna',
-    name: 'pocetna',
-    component: () => import(/* webpackChunkName: "pocetna" */ '../views/pocetna.vue')
+    component: () => import(/* webpackChunkName: "pocetna" */ '../views/Home.vue')
   },
 
   {
     path: '/izbornik',
     name: 'izbornik',
     component: () => import(/* webpackChunkName: "izbornik" */ '../views/izbornik.vue')
+  },
+
+  {
+    path: '/oaplikaciji',
+    name: 'oaplikaciji',
+    component: () => import(/* webpackChunkName: "izbornik" */ '../views/oaplikaciji.vue')
   },
 
   {

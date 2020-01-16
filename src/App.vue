@@ -5,26 +5,27 @@
       <div id="navi">
         <ul>
           <li>
-            <router-link class="a" to="/izbornik">O APLIKACIJI </router-link>
+            <router-link class="a" to="/oaplikaciji">O APLIKACIJI </router-link>
           </li>
           <li>
-            <router-link class="a" to="/pocetna">POČETNA</router-link>
+            <router-link class="a" to="/">POČETNA</router-link>
           </li>
           <li>
             <router-link class="a" to="/nutricalc">NUTRI CALC</router-link>
           </li>
-          <li  >
+          <li>
+             <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>
+            </li>
+          <li>
             <router-link v-if="!authenticated" class="button" to="/login">Login</router-link>
                 <span   v-if="authenticated">               
                   <a  @click.prevent="logout" class="button" href="#">Logout</a>
                 </span>
-                     
-            <li>
             <router-link v-if="!authenticated" class="button" to="/signup">Signup</router-link>
-            </li>
-             <p8>KORISNIK : {{ userEmail }} </p8>
-          <li style="float:right">              
-            <router-link button type="button" id="if" class="button" to="/izbornik">Izbornik funkcija</router-link>
+          </li>
+          <li style="float:right">   
+            <button type="buttonlog" id="if" class="button">ULOGIRANI KORISNIK <br> {{ userEmail }}</button>           
+    
           </li>
         </ul><br><br>
       </div>
@@ -92,6 +93,12 @@ export default {
     margin-top: 10px;
     padding-top: 10px;
     text-align: center;
+  }
+
+  #buttonlog {
+    margin-top: 20px;
+    text-align: center;
+    color: #4CAF50;
   }
 
   #if {
