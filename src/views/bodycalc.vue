@@ -27,10 +27,13 @@
                                                                 id="dob" placeholder="godine"></div>
                                                 <div class="form-group"><label for="exampleInputPassword1">Spol
                                                         </label><input type="decimal" class="form-control" v-model= "spol"
-                                                                id="spol" placeholder="m/z"></div>
+                                                                id="spol" placeholder="m/z"></div>                                                              
                                                                 <button
-                                                        id="bodybutton" type="submit"
-                                                        class="btn btn-primary">Izračunaj</button>
+                                                        id="bodybutton" type="submit"                                   
+                                                        class="btn btn-primary">SPREMI</button>
+                                                        <br>
+                                                       <p>(samo za registrirane korisnike)</p> 
+                                                         
                                         </form>
                                 </div>
                                 <div class="col-1"></div>
@@ -117,7 +120,9 @@
                                         </div>
 
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
-                                                to="">Pračenje</router-link>
+                                                to="">PRAČENJE</router-link>
+                                                 <p>(samo za registrirane korisnike)</p> 
+                                                
                                 </div>
                            
                         </div>
@@ -127,18 +132,19 @@
 
 
 <script>
-
+/* KORIŠTENE SU FORMULE PO UZORU NA https://www.calculator.net/ */
+/* FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIFICIRANE SU NA NAČIN KOJI JE ODGOVARAO ZA HEALTHVISOR APLIKACIJU*/
 export default {
     name: 'app',
     data () {
             return {
-            tezina: null,
-            visina: null,
-            opvrata: null,
-            opstruka: null,
-            opkukova: null,
-            dob: null,
-            spol: null
+            tezina: 75,
+            visina: 175,
+            opvrata: 44,
+            opstruka: 70,
+            opkukova: 88,
+            dob: 25,
+            spol: 'm'
             }
     },
     computed: {
@@ -320,31 +326,6 @@ export default {
                         }
                  },
 
-                /*
-                 poboljsanje: function () {
-                         if ( this.spol === 'm' ||  this.spol === 'M' ) {
-                             if (this.bfi < 5 ) {
-                               return link za lose stanje - premalo
-                             }
-                              if (this.bfi > 5 && this.bfi < 25 ) {
-                               return link za dobro stanje
-                             }
-                              if (this.bfi > 25 ) {
-                               return link za lose stanje - previse
-                             }
-
-                              if ( this.spol === 'z' ||  this.spol === 'Z' ) {
-                             if (this.bfi < 13 ) {
-                               return link za lose stanje - premalo
-                             }
-                              if (this.bfi > 5 && this.bfi < 31 ) {
-                               return link za dobro stanje
-                             }
-                              if (this.bfi > 31 ) {
-                               return link za lose stanje - previse
-                             }
-                  },
-                 */
                  bmr: function () {
                           if ( this.spol === 'm' ||  this.spol === 'M' ) {
                              let bmrm = (10 * this.tezina) + (6.25 * this.visina) - (5 * this.dob) + 5

@@ -32,6 +32,8 @@
 
 <script>
 export default {
+    /* KORIŠTENE SU FORMULE PO UZORU NA https://www.calculator.net/ */
+/* FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIFICIRANE SU NA NAČIN KOJI JE ODGOVARAO ZA HEALTHVISOR APLIKACIJU*/
     name:"login",
   data()  {
         return {
