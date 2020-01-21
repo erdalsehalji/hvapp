@@ -120,7 +120,7 @@
                                         </div>
 
                                         <router-link button id="bodybutton" type="submit" class="btn btn-primary"
-                                                to="">PRAČENJE</router-link>
+                                                to="/pracenje">PRAČENJE</router-link>
                                                  <p>(samo za registrirane korisnike)</p> 
                                                 
                                 </div>
