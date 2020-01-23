@@ -44,8 +44,11 @@ export default {
     } ,
     methods: {
         signup(){
-            firebase.auth().createUserWithEmailAndPassword(this.email , this.password).catch(function(error){
-                console.log(error);
+            firebase.auth().createUserWithEmailAndPassword(this.email , this.password).then(()=>{
+                let id = this.email
+                db.collection("users").doc(id).set ({
+                   
+                })
             });
         }
     }

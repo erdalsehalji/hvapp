@@ -54,7 +54,7 @@
                     </div>
                 </div>   
                 
-                <div id="nutriupit" class="col-5">
+                <div id="nutriupit" class="col-4">
                      <div id="korisnik" class="form-row">
                                
                          <div class="form-group">
@@ -106,7 +106,7 @@
                         <option>Pizza</option>
                         <option>Sarma</option>
                         <option>Čevapi</option>
-                        <option>Burek</option>
+                        <option>Busadsadsddssdrek</option>
                         <option>Lazanje</option>
                         <option>Grah</option>
                         <option>Sarma</option>
@@ -125,7 +125,7 @@
                         <option>Pašta s tunom</option>
                         <option>Pizza</option>
                         <option>Sarma</option>
-                        <option>Čevapi</option>
+                        <option>Busadsadsddssdrek</option>
                         <option>Burek</option>
                         <option>Lazanje</option>
                         <option>Grah</option>
@@ -146,7 +146,7 @@
                         <option>Pizza</option>
                         <option>Sarma</option>
                         <option>Čevapi</option>
-                        <option>Burek</option>
+                        <option>Busadsadsddssdrek</option>
                         <option>Lazanje</option>
                         <option>Grah</option>
                         <option>Sarma</option>
@@ -161,7 +161,7 @@
                         </div>
                 </div>  
                 </div>  
-                     
+                     <div class="col-md-1"></div>
                  <div id="nutrires" class="col-7">                      
                     <div id="korisnik" class="form-row">
                        
@@ -206,17 +206,17 @@ export default {
             return {
             namirnica: null,
             kolicina: 0,
-            jela: '',
-            namirnica1: null,
-            namirnica2: null,
-            namirnica3: null,
-            namirnica4: null,
-            namirnica5: null,
-            kolicina1: null,
-            kolicina2: null,
-            kolicina3: null,
-            kolicina4: null,
-            kolicina5: null
+          
+            namirnica1: '',
+            namirnica2: '',
+            namirnica3: '',
+            namirnica4: '',
+            namirnica5: '',
+            kolicina1: 1,
+            kolicina2: 1,
+            kolicina3: 1,
+            kolicina4: 1,
+            kolicina5: 1
          
             }
     },
@@ -271,7 +271,7 @@ FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIF
        izracunugljikohidrati1: function () {
          if (this.namirnica1 === 'Žitarice') {
             let nam1u = this.kolicina1 * 2.79
-            return nam1u
+            return nam1u.toFixed(2)
          }
            if (this.namirnica1 === 'Kuhano jaje') {
             let nam1u = this.kolicina1 * 0.045
@@ -623,7 +623,7 @@ FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIF
 
       },
         izracunenergijaukupno: function () {
-                let euk = (this.nam1e * 100)
+                let euk = this.izracunenergija1
                 return euk
              
           },
