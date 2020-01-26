@@ -45,12 +45,26 @@ export default {
     methods: {
         signup(){
             firebase.auth().createUserWithEmailAndPassword(this.email , this.password).then(()=>{
-                let id = this.email
-                db.collection("users").doc(id).set ({
-                   
-                })
-            });
-        }
+                let self=this;
+                let id=self.email
+
+       /*        db.collection("Korisnik").doc(id).collection("Podaci").add({
+                BMI :'',
+                BFI :'',
+                BFM:'',
+                CISTA:'' 
+            })
+            .then(function() {
+                console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+                console.error("Error writing document: ", error);
+            }); */
+
+            });  
+
+
+        }  
     }
 }
 </script>

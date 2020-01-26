@@ -1,143 +1,99 @@
 <template>
         <div>
-                <div class="container">
-                        <div class="row">
-                                <div id="naslov" class="col-12">
-                                        <h5><strong>BODY CALC</strong></h5>
-                                </div>
-                                <div id="bodyupit" class="col-md-2">
-                                        <form>
-                                                <div class="form-group"><label for="InputEmail">Težina</label><input
-                                                                type="number" class="form-control" name="tezina" v-model= "tezina" id="tezina"
-                                                                placeholder="kg"></div>                                               
-                                                <div class="form-group"><label for="exampleInputPassword1">Visina</label><input
-                                                                type="number" class="form-control" name="visina" v-model= "visina" id="visina"
-                                                                placeholder="cm"></div>
-                                                 <div class="form-group"><label for="exampleInputPassword1">Opseg vrata</label><input
-                                                                type="decimal" class="form-control"  v-model= "opvrata" id="opvrata"
-                                                                placeholder="cm"></div>
-                                                <div class="form-group"><label for="exampleInputPassword1">Opseg
-                                                                struka</label><input type="decimal" class="form-control" v-model= "opstruka"
-                                                                id="opstruka" placeholder="cm"></div>
-                                                <div class="form-group"><label for="exampleInputPassword1">Opseg
-                                                                kukova</label><input type="decimal" class="form-control" v-model= "opkukova"
-                                                                id="opkukova" placeholder="cm"></div>
-                                                <div class="form-group"><label for="exampleInputPassword1">Dob
-                                                        </label><input type="decimal" class="form-control" v-model= "dob"
-                                                                id="dob" placeholder="godine"></div>
-                                                <div class="form-group"><label for="exampleInputPassword1">Spol
-                                                        </label><input type="decimal" class="form-control" v-model= "spol"
-                                                                id="spol" placeholder="m/z"></div>                                                              
-                                                                <button
-                                                        id="bodybutton" type="submit"                                   
-                                                        class="btn btn-primary">SPREMI</button>
-                                                        <br>
-                                                       <p>(samo za registrirane korisnike)</p> 
-                                                         
-                                        </form>
-                                </div>
-                                <div class="col-1"></div>
-                                <div id="bodyuotput" class="col-9">
-                                        <p10><strong>BODY SURFACE AREA (m2)</strong></p10>
-                                        <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Du Boisova
-                                                                metoda (m2)</label><input type="char" class="form-control"
-                                                                :value="dubois" name="duboisova"
-                                                                id="dubo" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Takahirina
-                                                                metoda (m2)</label><input type="char" class="form-control"
-                                                                :value="takahira" name="takihirina"
-                                                                id="taka" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Fujimotova
-                                                                metoda (m2)</label><input type="char" class="form-control"
-                                                                :value="fujimoto" name="fujimotova"
-                                                                id="fuji" placeholder=""></div>
-                                        </div>
-                                        <p10><strong>BODY FAT INDEX (BFI)</strong></p10>
-                                        <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat
-                                                                index (%)</label><input type="char" class="form-control"
-                                                                 :value="bfi" name="bfiukupan"
-                                                                id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat
-                                                                mass (kg)</label><input type="number" class="form-control"
-                                                                :value="bfm" name="bfm"
-                                                                id="bfm" placeholder=""></div>                                                      
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Čista tjelesna
-                                                                masa (kg)</label><input type="decimal" class="form-control"
-                                                                 :value="cista" name="cista" 
-                                                                id="cista" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Idealni BFI za
-                                                                danu dob (%)</label><input type="email" class="form-control"
-                                                                :value="idealbfi" name="idealbfi"
-                                                                id="idealbfi" placeholder=""></div>
-                                                 <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena postotka masti</label><input type="text"
-                                                                :value="bfiocjena" name="bfiocjena"
-                                                                class="form-control" id="i" placeholder="">
-                                                </div>
-                                                        <a href= "https://www.everydayhealth.com/diet-nutrition/bmi/how-you-reduce-your-bmi-science-backed-steps/" button id="bodybutto" type="submit" class="btn btn-primary col-md-4"
-                                        >VANJSKI LINK ZA POBOLJŠANJE BFI</a>
-                                        </div>
-                                        <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
-                                        <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Body mass index (kg/m2)</label><input type="char" class="form-control"
-                                                                :value="bmi" name="bmiukupan"
-                                                                id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena količnika težine i visine</label><input type="text" class="form-control"
-                                                                :value="bmio" name="bmio" id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label
-                                                                for="inputEmail4">Idealno za vašu visinu (kg)</label><input
-                                                                type="char" 
-                                                                 :value="idealbmi" name="idealbmi"
-                                                                class="form-control" id="inputEmail4"
-                                                                placeholder=""></div>
-                                        </div>
-
-                                       <p10><strong>DNEVNI METABOLIČKI UNOS</strong></p10>
-                                        <div id="korisnik" class="form-row">
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Bazični metabolički unos</label><input type="char" class="form-control"
-                                                                :value="bmr" name="bmr"
-                                                                id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Niski nivo aktivnosti</label><input type="char" class="form-control"
-                                                                :value="bmr1" name="bmr1"  placeholder=""></div>
-                                                <div class="form-group col-md-4"><label 
-                                                                for="inputEmail4">Aktivnost 1-3 puta tjedno</label><input
-                                                                type="char" 
-                                                                 :value="bmr2" name="bmr2"
-                                                                class="form-control" 
-                                                                placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Aktivnost 4-5 puta tjedno</label><input type="char" class="form-control"
-                                                                :value="bmr3" name="bmr3"
-                                                                id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label for="exampleInputPassword1">Intenzivno 3-4 puta tjedno</label><input type="char" class="form-control"
-                                                                :value="bmr4" name="bmr4" id="inputEmail4" placeholder=""></div>
-                                                <div class="form-group col-md-4"><label 
-                                                                for="inputEmail4">Intenzivno 6-7 puta tjedno</label><input
-                                                                type="char" 
-                                                                 :value="bmr5" name="bmr5"
-                                                                class="form-control" id="inputEmail4"
-                                                                placeholder=""></div>
-                                        </div>
-
-                                        <router-link button id="bodybutton" type="submit" class="btn btn-primary"
-                                                to="/pracenje">PRAČENJE</router-link>
-                                                 <p>(samo za registrirane korisnike)</p> 
-                                                
-                                </div>
-                           
+          <div class="container">
+            <div class="row">
+               <div id="naslov" class="col-12">
+                   <h5><strong>BODY CALC</strong></h5>
                         </div>
+                <div id="bodyupit" class="col-md-2">
+                                <form @submit.prevent="spremanje">
+                        <div class="form-group"><label for="InputEmail">Težina</label><input type="number" class="form-control" name="tezina" v-model= "tezina" id="tezina" placeholder="kg"></div>                                               
+                        <div class="form-group"><label for="exampleInputPassword1">Visina</label><input type="number" class="form-control" name="visina" v-model= "visina" id="visina" placeholder="cm"></div>
+                        <div class="form-group"><label for="exampleInputPassword1">Opseg vrata</label><input type="decimal" class="form-control"  v-model= "opvrata" id="opvrata" placeholder="cm"></div>
+                        <div class="form-group"><label for="exampleInputPassword1">Opseg struka</label><input type="decimal" class="form-control" v-model= "opstruka" id="opstruka" placeholder="cm"></div>
+                        <div class="form-group"><label for="exampleInputPassword1">Opseg kukova</label><input type="decimal" class="form-control" v-model= "opkukova" id="opkukova" placeholder="cm"></div>
+                        <div class="form-group"><label for="exampleInputPassword1">Dob</label><input type="decimal" class="form-control" v-model= "dob" id="dob" placeholder="godine"></div>
+                         <div class="form-group"><label for="exampleInputPassword1">Spol</label><input type="decimal" class="form-control" v-model= "spol" id="spol" placeholder="m/z"></div>                                                              
+                                 <button id="bodybutton" type="submit" class="btn btn-primary">SPREMI</button><br>
+                                        <p>(samo za registrirane korisnike)</p> 
+                                        </form>
+                        </div>
+                        <div class="col-1"></div>
+                        <div id="bodyuotput" class="col-9">
+                                <p10><strong>BODY SURFACE AREA (m2)</strong></p10>
+                <div id="korisnik" class="form-row">
+                  <div class="form-group col-md-4"><label for="exampleInputPassword1">Du Boisova metoda (m2)</label><input type="char" class="form-control" :value="dubois" name="duboisova"
+                                         id="dubo" placeholder="">
+                                         </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Takahirina  metoda (m2)</label><input type="char" class="form-control" :value="takahira" name="takihirina"
+                                       id="taka" placeholder="">
+                                       </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Fujimotova metoda (m2)</label><input type="char" class="form-control" :value="fujimoto" name="fujimotova"
+                                        id="fuji" placeholder="">
+                                        </div>
                 </div>
+                                <p10><strong>BODY FAT INDEX (BFI)</strong></p10>
+                <div id="korisnik" class="form-row">
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat index (%)</label><input type="char" class="form-control" :value="bfi" name="bfiukupan"
+                                        id="inputEmail4" placeholder="">
+                                        </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Body fat mass (kg)</label><input type="number" class="form-control" :value="bfm" name="bfm"
+                                        id="bfm" placeholder="">
+                                        </div>                                                      
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Čista tjelesna masa (kg)</label><input type="decimal" class="form-control" :value="cista" name="cista" 
+                                        id="cista" placeholder="">
+                                        </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Idealni BFI za danu dob (%)</label><input type="email" class="form-control" :value="idealbfi" name="idealbfi"
+                                        id="idealbfi" placeholder="">
+                                        </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena postotka masti</label><input type="text" :value="bfiocjena" name="bfiocjena"
+                                        class="form-control" id="i" placeholder="">
+                                         </div>
+                                         <a href= "https://www.everydayhealth.com/diet-nutrition/bmi/how-you-reduce-your-bmi-science-backed-steps/" button id="bodybutto" type="submit" 
+                                         class="btn btn-primary col-md-4">VANJSKI LINK ZA POBOLJŠANJE BFI</a>
+                </div>
+                                <p10><strong>BODY MASS INDEX (BMI)</strong></p10>
+                <div id="korisnik" class="form-row">
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Body mass index (kg/m2)</label><input type="char" class="form-control" :value="bmi" name="bmiukupan"
+                                        id="inputEmail4" placeholder="">
+                                        </div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Ocjena količnika težine i visine</label><input type="text" class="form-control" :value="bmio" name="bmio" 
+                                        id="inputEmail4" placeholder="">
+                                        </div>
+                        <div class="form-group col-md-4"><label for="inputEmail4">Idealno za vašu visinu (kg)</label><input type="char" :value="idealbmi" name="idealbmi"
+                                        class="form-control" id="inputEmail4" placeholder="">
+                                        </div>
+                </div>
+
+                                 <p10><strong>DNEVNI METABOLIČKI UNOS</strong></p10>
+                <div id="korisnik" class="form-row">
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Bazični metabolički unos</label><input type="char" class="form-control" :value="bmr" name="bmr"
+                                        id="inputEmail4" placeholder=""></div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Niski nivo aktivnosti</label><input type="char" class="form-control" :value="bmr1" name="bmr1"  placeholder=""></div>
+                        <div class="form-group col-md-4"><label for="inputEmail4">Aktivnost 1-3 puta tjedno</label><input type="char" :value="bmr2" name="bmr2" class="form-control" placeholder=""></div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Aktivnost 4-5 puta tjedno</label><input type="char" class="form-control" :value="bmr3" name="bmr3" id="inputEmail4" placeholder=""></div>
+                        <div class="form-group col-md-4"><label for="exampleInputPassword1">Intenzivno 3-4 puta tjedno</label><input type="char" class="form-control" :value="bmr4" name="bmr4" id="inputEmail4" placeholder=""></div>
+                        <div class="form-group col-md-4"><label for="inputEmail4">Intenzivno 6-7 puta tjedno</label><input type="char" :value="bmr5" name="bmr5" class="form-control" id="inputEmail4" placeholder=""></div>
+                </div>
+                <router-link button id="bodybutton" type="submit" class="btn btn-primary" to="/pracenje">PRAČENJE</router-link>
+                         <p>(samo za registrirane korisnike)</p>                                               
+                         </div>
+                           
+                 </div>
+              </div>
         </div>
 </template>
 
 
 <script>
+import store from '@/store.js'
 /* KORIŠTENE SU FORMULE PO UZORU NA https://www.calculator.net/ */
 /* FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIFICIRANE SU NA NAČIN KOJI JE ODGOVARAO ZA HEALTHVISOR APLIKACIJU*/
 export default {
     name: 'app',
     data () {
             return {
+            global:store,
             tezina: 75,
             visina: 175,
             opvrata: 44,
@@ -145,6 +101,24 @@ export default {
             opkukova: 88,
             dob: 25,
             spol: 'm'
+            }
+    },
+    methods:{
+            spremanje(){
+                db.collection("Korisnik").doc(this.global.userEmail).collection("Podaci").add({
+                BMI :this.bmi,
+                BFI :this.bfi,
+                BFM:this.bfm,
+                CISTA:this.cista, 
+                DATUM: Date.now()
+            })
+            .then(function() {
+                console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+                console.error("Error writing document: ", error);
+            }); 
+            this.$router.push({path:'/'});  
             }
     },
     computed: {
