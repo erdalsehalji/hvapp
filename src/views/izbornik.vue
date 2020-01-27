@@ -23,7 +23,7 @@
       <div id="home31" class="col-4"><br><br>
         <div class="card" style=""><img src="pear.jpg" class="card-img-top" alt=""></div><br>
         <div id="btnpoc">
-          <router-link button type="button" class="btn btn-warning" to="/izbornikfunkcija">FOOD INFO</router-link>
+          <router-link button type="button" class="btn btn-warning" to="/info">FOOD INFO</router-link>
         </div><br>
         <p>Traži unos imena namirnice ili klik na dugme random. Zatim izbacuje podatke o namirnici,
             kao i zanimljivosti vezane uz istu. </p>
