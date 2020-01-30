@@ -3718,15 +3718,15 @@ FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIF
         margin-bottom: 20px;
     }
     h5 {
-    position: absolute;
-    font-family: Chilanka;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 40px;
-    color: orange;
-    text-align: center;
-    margin-left: 240px;
+       position: center;
+                font-family: Chilanka;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 40px;
+                line-height: 40px;
+                color: orange;
+                text-align: center;
+                ;
     }
     p3 {
        font-size: 18px;

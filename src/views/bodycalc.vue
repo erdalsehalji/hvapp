@@ -74,9 +74,7 @@
                         <div class="form-group col-md-4"><label for="exampleInputPassword1">Aktivnost 4-5 puta tjedno</label><input type="char" class="form-control" :value="bmr3" name="bmr3" id="inputEmail4" placeholder=""></div>
                         <div class="form-group col-md-4"><label for="exampleInputPassword1">Intenzivno 3-4 puta tjedno</label><input type="char" class="form-control" :value="bmr4" name="bmr4" id="inputEmail4" placeholder=""></div>
                         <div class="form-group col-md-4"><label for="inputEmail4">Intenzivno 6-7 puta tjedno</label><input type="char" :value="bmr5" name="bmr5" class="form-control" id="inputEmail4" placeholder=""></div>
-                </div>
-                <router-link button id="bodybutton" type="submit" class="btn btn-primary" to="/pracenje">PRAČENJE</router-link>
-                         <p>(samo za registrirane korisnike)</p>                                               
+                </div>                                  
                          </div>
                            
                  </div>

@@ -42,11 +42,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "nutricalc" */ '../views/nutricalc.vue')
   },
 
-  {
-    path: '/pracenje',
-    name: 'pracenje',
-    component: () => import(/* webpackChunkName: "pracenje" */ '../views/pracenje.vue')
-  },
+ 
 
   {
     path: '/bodycalc',

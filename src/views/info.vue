@@ -160,19 +160,13 @@
     color: orange;
   }
 
-  #home1 {
-    position: relative;
-    background-color: #333;
-  }
+  
 
   #home2 {
     position: relative;
     background-color: #333;
   }
 
-  #home3 {
-    position: relative;
-    background-color: #333;
-  }
+  
 </style>
 

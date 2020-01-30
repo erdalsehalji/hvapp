@@ -18,26 +18,24 @@
             </li>
           <li>
             <router-link v-if="!authenticated" class="button" to="/login">Login</router-link>
-                <span   v-if="authenticated">               
-                  <a  @click.prevent="logout" class="button" href="#">Logout</a>
-                </span>
-            <router-link v-if="!authenticated" class="button" to="/signup">Signup</router-link>
-          </li>
-          <li style="float:right">   
+            <span   v-if="authenticated">    
+                   <li style="float:right">   
             <button type="buttonlog" id="if" class="button">ULOGIRANI KORISNIK <br> {{ userEmail }}</button>           
     
+          </li>           
+                  <a  @click.prevent="logout" class="button" href="#">Logout</a>
+                </span>
           </li>
+          <li>
+            <router-link v-if="!authenticated" class="button" to="/signup">Signup</router-link>
+        
+          </li>
+         
         </ul><br><br>
       </div>
       <div>
         <router-view />
       </div><br>
-      <footer class="footer mt-auto py-3">
-        <div class="container">
-          <p9>HEALTHVISOR,
-            aplikacija za analizu u praćenje tjelesnih specifikacija.</p9>
-        </div>
-      </footer>
     </div>
   </body>
 </template>
@@ -153,11 +151,6 @@ export default {
   #app {
     background-color: rgb(84, 82, 82);
     height: 100vh;
-  }
-
-  #footer-li {
-    text-align: center;
-
   }
 
   body {
