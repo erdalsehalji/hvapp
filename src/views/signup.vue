@@ -39,11 +39,12 @@ export default {
         return {
          email:'',
          password:'',
-         password2:''
+         password2:'',
+         
         }
     } ,
     methods: {
-        signup(){
+        signup(){ //signup metoda
             firebase.auth().createUserWithEmailAndPassword(this.email , this.password).then(()=>{
                 let self=this;
                 let id=self.email

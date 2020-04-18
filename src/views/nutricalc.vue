@@ -310,7 +310,7 @@ FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIF
             return nam1p
          }
            if (this.namirnica1 === 'Jabuka') {
-            let nam1p = this.kolicina1 * 22
+            let nam1p = this.kolicina1 * 0.022
             return nam1p
          }
            if (this.namirnica1 === 'Banana') {
@@ -1524,7 +1524,7 @@ FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIF
             let nam4k = this.kolicina4 * 0.47
             return nam4k
          }
-           if (this.namirnica4 === 'Musli') {
+           if (this.namirnica4 === 'Musli kalorijski') {
             let nam4k = this.kolicina4 * 3.62
             return nam4k
          }
