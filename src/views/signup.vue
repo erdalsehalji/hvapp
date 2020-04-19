@@ -21,6 +21,8 @@
           <label for="confirmPasswordField">Confirm Password</label>
           <input v-model="password2" type="password" class="form-control" id="confirmPasswordField" placeholder="Confirm password">
         </div>
+      
+        
         <button type="submit" class="btn btn-primary mt-5">Submit</button>
       </form>
                 </div>
@@ -31,7 +33,9 @@
 </template>
 
 <script>
+import db from './vv.js'
 export default {
+    
     /* KORIŠTENE SU FORMULE PO UZORU NA https://www.calculator.net/ */
 /* FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIFICIRANE SU NA NAČIN KOJI JE ODGOVARAO ZA HEALTHVISOR APLIKACIJU*/
     name:"login",
@@ -39,14 +43,22 @@ export default {
         return {
          email:'',
          password:'',
-         password2:''
+         password2:'',
+         tezina
+         
         }
     } ,
     methods: {
-        signup(){
+        signup(){ //signup
+            
             firebase.auth().createUserWithEmailAndPassword(this.email , this.password).then(()=>{
                 let self=this;
                 let id=self.email
+                db.collection("Korisnik")
+                .doc(id)
+                .set({
+                    tezina: self.tezina
+                })
 
        /*        db.collection("Korisnik").doc(id).collection("Podaci").add({
                 BMI :'',

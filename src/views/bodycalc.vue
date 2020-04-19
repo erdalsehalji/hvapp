@@ -17,7 +17,9 @@
                                  <button id="bodybutton" type="submit" class="btn btn-primary">SPREMI</button><br>
                                         <p>(samo za registrirane korisnike)</p> 
                                         </form>
+                                       
                         </div>
+                        
                         <div class="col-1"></div>
                         <div id="bodyuotput" class="col-9">
                                 <p10><strong>BODY SURFACE AREA (m2)</strong></p10>
@@ -85,10 +87,13 @@
 
 <script>
 import store from '@/store.js'
+import db from './vv.js'   
+     
 /* KORIŠTENE SU FORMULE PO UZORU NA https://www.calculator.net/ */
 /* FORME ZA LOGIN, SIGNUP, TJELESNE SPECIFIKACIJE SU PREUZETE SA BOOTSTRAPA I MODIFICIRANE SU NA NAČIN KOJI JE ODGOVARAO ZA HEALTHVISOR APLIKACIJU*/
 export default {
     name: 'app',
+
     data () {
             return {
             global:store,
@@ -101,8 +106,11 @@ export default {
             spol: 'm'
             }
     },
+ 
+ 
     methods:{
             spremanje(){
+           
                 db.collection("Korisnik").doc(this.global.userEmail).collection("Podaci").add({
                 BMI :this.bmi,
                 BFI :this.bfi,
@@ -117,8 +125,13 @@ export default {
                 console.error("Error writing document: ", error);
             }); 
             this.$router.push({path:'/'});  
-            }
+            },
+
+          
+        
     },
+ 
+    
     computed: {
              bmi: function () {
               
